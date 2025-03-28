@@ -1,0 +1,2335 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
+
+/* Global Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+}
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #2e7d32;
+}
+
+.nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+.nav a:nth-child(2)::after {
+  content: '▼';
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#search-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+#search-btn:hover {
+  background: #f0f0f0;
+}
+
+.btn-try {
+  background: #d4a93a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 5%;
+  background: linear-gradient(to bottom, #f5f5f5, #ffffff);
+}
+
+/* Left Content */
+.left-content {
+  max-width: 50%;
+}
+
+.rating-badge {
+  background: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Stats Section */
+.stats {
+  display: flex;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.stats div {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.stats span {
+  display: block;
+  font-size: 2.5rem;
+  color: #d4a93a;
+}
+
+/* Button */
+.btn-shop {
+  background: #d4a93a;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 20px;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-shop:hover {
+  background: #b3882c;
+}
+
+/* Product Display (Right Side) */
+.product-container {
+  position: relative;
+  width: 50%;
+  height: 500px;
+}
+
+.product {
+  position: absolute;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.white {
+  left: 20%;
+  z-index: 20;
+  width: 450px;
+}
+
+.brown {
+  left: 0;
+  z-index: 10;
+  transform: translateY(20px);
+  width: 400px;
+}
+
+.green {
+  right: 0;
+  z-index: 10;
+  transform: translateY(20px);
+  width: 400px;
+}
+
+/* Ingredient Surrounding Images */
+.surround {
+  position: absolute;
+  width: 100px;
+  z-index: 5;
+}
+
+.surr-1 { top: 55%; left: -2%; width: 200px; }
+.surr-2 { top: 40%; left: 2%; width: 150px; transform: rotate(75deg); }
+.surr-3 { top: 35%; left: 70%; width: 180px; }
+.surr-4 { top: 20%; right: -2%; width: 150px; }
+.surr-5 { top: 75%; right: 40%; width: 200px; }
+.surr-6 { bottom: 10%; right: -5%; width: 250px; transform: rotate(115deg); }
+.surr-7 { top: 75%; left: 50%; width: 200px; }
+.surr-8 { top: 15%; left: -5%; width: 250px; }
+.surr-9 { bottom: 10%; left: 15%; width: 150px; }
+
+/* Tagline */
+.tagline {
+  margin: 50px auto;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: 2px solid #d4a93a;
+  display: block;
+  width: fit-content;
+  padding: 10px 30px;
+  border-radius: 30px;
+  background: white;
+  text-align: center;
+}
+
+/* Ingredient Section */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 5%;
+}
+
+.product-section {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image {
+  width: 500px;
+  transform: rotate(-5deg);
+  position: relative;
+  z-index: 10;
+}
+.product-image-1 {
+  width: 500px;
+  position: relative;
+  z-index: 10;
+  margin-top: -10%;
+}
+
+.ingredient {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ingredient img {
+  width: 80px;
+}
+
+.ingredient-title {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.ingredient-desc {
+  font-size: 14px;
+  color: #555;
+}
+
+.gynostemma { top: -10%; right: 35%; }
+.mucuna { top: -5%; right: 15%; }
+.lions-mane { top: 25%; right: 10%; }
+.astragalus { bottom: 35%; right: 5%; width: 150px; }
+.cordyceps { bottom: -5%; right: 35%; }
+.he-shou-wu { bottom: 0; left: 20%; }
+.shilajit { bottom: 30%; left: 10%; }
+.reishi { top: 25%; left: 10%; }
+.polygala { top: 0; left: 20%; }
+
+.content-section {
+  flex: 1;
+  max-width: 500px;
+}
+
+.content-section h2 {
+  color: #b88933;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.content-section h1 {
+  font-size: 2.5rem;
+  margin: 15px 0;
+}
+
+.content-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.btn {
+  display: inline-block;
+  background: #b88933;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Product Selection Section */
+.product-selection .content-section {
+  max-width: 600px;
+  /* margin-top: 5%; */
+}
+/* .product-section{
+  margin-top: -15%;
+  margin-left: -15%;
+
+} */
+.rating {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.rating span {
+  color: #d4a93a;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin: 20px 0 10px;
+}
+
+.flavor-options {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.flavor-options label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.flavor-options input {
+  position: absolute;
+  opacity: 0;
+}
+
+.flavor-options img {
+  width: 80px;
+  margin-bottom: 5px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: border 0.3s;
+}
+
+.flavor-options input:checked + img {
+  border: 2px solid #d4a93a;
+}
+
+.price-options {
+  margin-bottom: 20px;
+}
+
+.price-option {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: border 0.3s;
+}
+
+.price-option.selected {
+  border: 2px solid #d4a93a;
+}
+
+.price-option label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.price-option input {
+  position: absolute;
+  opacity: 0;
+}
+
+.option-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.price .discounted {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.price .original {
+  font-size: 1rem;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+.gynostemma-1 { top: -25%; right: 40%; }
+.mucuna-1 { top: -5%; right: 15%; }
+.lions-mane-1 { top: 25%; right: 10%; }
+.astragalus-1 { bottom: 15%; right: 15%; width: 150px; }
+.cordyceps-1 { bottom: -12%; right: 40%; }
+.he-shou-wu-1 { bottom: 0; left: 20%; }
+.shilajit-1 { bottom: 30%; left: 10%; }
+.reishi-1 { top: 15%; left: 10%; }
+.polygala-1 { top: -11%; left: 20%; }
+
+
+.frequency {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #555;
+  margin: 10px 0;
+}
+
+.kit-images {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.kit-images img {
+  width: 60px;
+  border-radius: 5px;
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.benefits li {
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.benefits li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #d4a93a;
+}
+
+.btn-add-to-cart {
+  display: block;
+  background: #2e7d32;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  /* transition: background 0.3s; */
+}
+
+.btn-add-to-cart:hover {
+  background: #256528;
+}
+
+.certifications {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cert-icon {
+  width: 40px;
+  height: auto;
+}
+
+/* Guarantee Section */
+.guarantee-section {
+  background: #f9f9f9;
+  padding: 50px 5%;
+  text-align: center;
+}
+
+.guarantee-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.guarantee-title {
+  color: #b07a32;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.guarantee-items {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.guarantee-item {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+.guarantee-item .icon {
+  width: 50px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* As Seen In Section */
+.as-seen-in {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.as-seen-in h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  max-height: 40px;
+  width: auto;
+  
+}
+.logo-1 {
+  max-height: 65px;
+  width: auto;
+  
+}
+/* Certifications Section */
+.certifications {
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  gap: 200px; /* Space between certification items (adjusted to match the image) */
+  max-width: 1200px; /* Maximum width to keep items from stretching too wide */
+  margin: 20px auto; /* Center the section with some margin */
+  padding: 0; /* Add padding for smaller screens */
+  margin-top: 100px;
+}
+
+/* Individual Certification Item */
+.cert-item {
+  display: flex;
+  flex-direction: column; /* Stack the icon and text vertically */
+  align-items: center; /* Center the icon and text horizontally */
+  text-align: center; /* Center the text */
+}
+
+/* Certification Icons */
+.cert-icon {
+  width: 40px; /* Set a consistent width for the icons */
+  height: 40px; /* Set a consistent height for the icons */
+  margin-bottom: 5px; /* Space between the icon and the text */
+}
+
+/* Certification Text */
+.cert-item span {
+  font-size: 20px; /* Font size for the text */
+  color: #333; /* Text color */
+  font-weight: 500; /* Slightly bold text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .certifications {
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 20px; /* Slightly smaller gap for medium screens */
+  }
+
+  .cert-item {
+    flex: 1 1 30%; /* Allow 3 items per row on medium screens */
+    min-width: 100px; /* Ensure items don’t get too small */
+  }
+}
+
+@media (max-width: 480px) {
+  .certifications {
+    gap: 15px; /* Smaller gap for small screens */
+  }
+
+  .cert-item {
+    flex: 1 1 45%; /* Allow 2 items per row on small screens */
+    min-width: 80px; /* Adjust minimum width for small screens */
+  }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .left-content, .product-container {
+    max-width: 100%;
+    width: 100%;
+  }
+  .product-container {
+    height: 300px;
+  }
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .product-section, .content-section {
+    max-width: 100%;
+    text-align: center;
+  }
+  .flavor-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  .certifications {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .guarantee-items, .logo-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+/* Below Image Section */
+.below-image {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for each row */
+  gap: 0.5px; /* Reduced space between images */
+  max-width: 900px; /* Maximum width to keep images from stretching too wide */
+  margin: 2px auto; /* Center the grid with some margin */
+  padding: 0 5%; /* Add padding for smaller screens */
+  margin-left: -1%;
+  margin-top: -15%;
+}
+
+.below-image img {
+  left: 20%;
+
+  width: 90%; /* Make images fill their grid cell fully */
+  height: 130px; /* Fixed height as specified */
+  border-radius: 10px; /* Rounded corners as seen in the image */
+  object-fit: cover; /* Ensure images fit nicely within their container */
+  margin: 0 auto; /* Center the image within its grid cell */
+}
+.below-image-1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for each row */
+  gap: 0.5px; /* Reduced space between images */
+  max-width: 900px; /* Maximum width to keep images from stretching too wide */
+  margin: 2px auto; /* Center the grid with some margin */
+  padding: 0 5%; /* Add padding for smaller screens */
+  margin-left: -1%;
+  margin-top: 2%;
+}
+
+.below-image-1 img {
+  left: 20%;
+
+  width: 90%; /* Make images fill their grid cell fully */
+  height: 130px; /* Fixed height as specified */
+  border-radius: 10px; /* Rounded corners as seen in the image */
+  object-fit: cover; /* Ensure images fit nicely within their container */
+  margin: 0 auto; /* Center the image within its grid cell */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .below-image {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    gap: 5px; /* Reduced gap for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .below-image {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
+    gap: 3px; /* Reduced gap for small screens */
+  }
+}
+
+
+/* Global Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+}
+
+.logo::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #2e7d32;
+}
+
+.nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.nav a:nth-child(2)::after {
+  content: '▼';
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#search-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+#search-btn:hover {
+  background: #f0f0f0;
+}
+
+.btn-try {
+  background: #d4a93a;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+}
+
+/* Main Content Section */
+.container-1 {
+  max-width: 900px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 50px 5%;
+}
+
+.container-1 h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #666;
+  margin-bottom: 30px;
+
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-img {
+  width: 900px;
+  height: 900px;
+  object-fit: contain; /* Ensures the image scales properly */
+  transform: rotate(4.5deg);
+  margin-left: -500px;
+
+}
+
+.benefits {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-left: 20px;
+}
+
+.benefit-card {
+
+  background-color: #fafbf2;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 20px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  width: 350px; /* Increased from 200px to 250px */
+}
+.icon {
+  font-size: 2rem;
+  color: #d4af37; /* Gold color for icons */
+  margin-bottom: 10px;
+}
+
+.benefit-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.try-button {
+  background-color: #d4af37; /* Gold color for button */
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s;
+}
+
+.try-button:hover {
+  background-color: #b8972e;
+}
+
+.try-button span {
+  font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content {
+      flex-direction: column;
+  }
+
+  .benefits {
+      grid-template-columns: 1fr;
+      margin-left: 0;
+      margin-top: 20px;
+  }
+
+  .product-image {
+      margin-bottom: 20px;
+  }
+
+  .header {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .nav a {
+      margin: 0 10px;
+  }
+}
+/* Subscription Banner Section */
+.subscription-banner {
+  background: url('images/alcami-with-coffee.jpg') no-repeat center right; /* Set the image as background */
+  background-size: cover; /* Ensure the image covers the section */
+  padding: 50px 0; /* Vertical padding for spacing */
+  border-radius: 10px; /* Rounded corners */
+  margin: 40px 0; /* Margin to separate from other sections */
+  position: relative; /* For positioning the content */
+  min-height: 400px; /* Ensure the section has enough height to display the image */
+}
+
+.subscription-banner .container-2 {
+  max-width: 1200px; /* Adjusted to a more standard width */
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the left */
+  height: 100%;
+}
+
+/* Text and Button */
+.banner-text {
+  max-width: 50%; /* Take up half the width on the left */
+   background: none;/* Remove the white semi-transparent background */
+  padding: 30px;
+  border-radius: 0; /* Remove rounded corners since there’s no background */
+}
+
+.subscription-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 200;
+  color: #D4A017; /* Gold color for the label */
+  text-transform: uppercase;
+  margin-bottom: 10px;
+letter-spacing: 5px;}
+
+.banner-text h1 {
+  font-size: 36px;
+  font-weight: 200;
+  color: #333;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.benefits-1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between benefit tags */
+  margin-bottom: 30px;
+}
+
+.benefits-1 span {
+  background: #e6e6e6; /* Light gray background for tags */
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 20px; /* Rounded tags */
+  text-transform: uppercase;
+}
+
+.btn-subscribe-1 {
+  background: #D4A017; /* Gold background for the button */
+  color: #060101;
+  font-size: 16px;
+  font-weight: 200;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px; /* Rounded button */
+  cursor: pointer;
+  letter-spacing: 5px;
+}
+
+.btn-subscribe:hover {
+  background: #D4A017; /* Slightly darker gold on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .subscription-banner {
+    background-position: center; /* Center the background image on smaller screens */
+    min-height: 500px; /* Adjust height for smaller screens */
+  }
+
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .banner-text {
+    max-width: 90%; /* Take up more width on smaller screens */
+    margin: 0 auto;
+  }
+
+  .banner-text h1 {
+    font-size: 28px;
+  }
+
+  .benefits-1 {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscription-banner {
+    min-height: 450px; /* Adjust height for very small screens */
+  }
+
+  .banner-text h1 {
+    font-size: 24px;
+  }
+
+  .benefits-1 span {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .btn-subscribe {
+    font-size: 14px;
+    padding: 12px 25px;
+  }
+}
+
+/* Morning Ritual Section */
+.morning-ritual {
+  padding: 50px 0; /* Vertical padding for spacing */
+  margin: 40px 0; /* Margin to separate from other sections */
+}
+
+.morning-ritual .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.ritual-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px; /* Space between text and image */
+}
+
+/* Left Side: Text and Button */
+.ritual-text {
+  flex: 1;
+  max-width: 50%;
+}
+
+.ritual-text h1 {
+  font-size: 36px;
+  font-weight: 200;
+  color: #333;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.ritual-text p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.steps {
+  margin-bottom: 30px;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.step-number {
+  font-size: 94px;
+  font-weight: 200;
+  color: #ccc;
+  margin-right: 55px;
+}
+
+.step-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #b19d2b;
+  margin-bottom: 5px;
+}
+
+.step-content p {
+  font-size: 16px;
+  color: #666;
+}
+
+.btn-ritual {
+  background: #D4A017; /* Gold background for the button */
+  color: #0e0101;
+  font-size: 20px;
+  font-weight: 200;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px; /* Rounded button */
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-ritual:hover {
+  background: #D4A017; /* Slightly darker gold on hover */
+}
+
+/* Right Side: Image with Play Button */
+.ritual-image {
+  flex: 1;
+  max-width: 50%;
+  position: relative;
+  text-align: right; /* Align image to the right */
+}
+
+.ritual-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Rounded corners for the image */
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.8);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.play-button span {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ritual-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ritual-text {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .ritual-text h1 {
+    font-size: 28px;
+  }
+
+  .ritual-text p {
+    font-size: 16px;
+  }
+
+  .step {
+    justify-content: center;
+  }
+
+  .ritual-image {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .ritual-text h1 {
+    font-size: 24px;
+  }
+
+  .ritual-text p {
+    font-size: 14px;
+  }
+
+  .step-content h3 {
+    font-size: 16px;
+  }
+
+  .step-content p {
+    font-size: 14px;
+  }
+
+  .btn-ritual {
+    font-size: 14px;
+    padding: 12px 25px;
+  }
+
+  .play-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .play-button span {
+    font-size: 20px;
+  }
+}
+/* Statistics Section */
+.statistics {
+  margin: 90px 0; /* Margin to separate from other sections */
+  position: relative; /* For positioning the content */
+  color: #fff; /* White text for readability against the background */
+}
+
+.statistics .container {
+  padding: 50px 0;
+  background-size: cover; 
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 5%;
+  padding: 0px;
+  background: url('images/oyster.jpg') no-repeat center center;
+}
+
+.stats-content {
+  display: flex;
+  justify-content: space-between; /* Space the items evenly */
+  gap: 20px; /* Space between stat items */
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay for readability */
+  padding: 30px;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.stat-item {
+  flex: 1; /* Each item takes equal space */
+}
+
+.stat-item h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff; /* White color for the percentage */
+}
+
+.stat-item p {
+  font-size: 16px;
+  color: #ddd; /* Slightly lighter white for the description */
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .stats-content {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    gap: 30px; /* Increase gap for better spacing */
+  }
+
+  .stat-item h2 {
+    font-size: 36px;
+  }
+
+  .stat-item p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-item h2 {
+    font-size: 28px;
+  }
+
+  .stat-item p {
+    font-size: 12px;
+  }
+
+  .stats-content {
+    padding: 20px;
+  }
+}
+/* Comparison Section */
+.comparison {
+  padding: 50px 0; /* Vertical padding for spacing */
+  margin: 40px 0; /* Margin to separate from other sections */
+}
+
+.comparison .container-4{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.comparison h1 {
+  font-size: 36px;
+  font-weight: 200;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Product Images */
+.product-images-4 {
+  display: flex;
+  justify-content: space-between; /* Space the products evenly */
+  margin-bottom: 20px;
+  margin-left: 350px;
+}
+
+.product-4 {
+  flex: 1; /* Each product takes equal space */
+  text-align: center;
+}
+
+.product-4:first-child {
+  flex: 1; /* Match the width of the "Benefits" column */
+  visibility: hidden; /* Hide the first product div to align with the table */
+}
+
+.product-4 img {
+  max-width: 70px; /* Adjust based on your image size */
+  height: auto;
+  border-radius: 5px; /* Optional: Rounded corners for images */
+}
+
+/* Comparison Table */
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.comparison-table ,
+.comparison-table td {
+  padding: 15px;
+  border-bottom: 0.1px solid #180e0e;
+}
+
+.comparison-table th:first-child,
+.comparison-table td:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+}
+
+.comparison-table th {
+  font-size: 16px;
+  font-weight: 200;
+  color: #666;
+}
+.comparison-table th,
+.benefits-1 {
+  border-bottom: none;
+  font-size: 20px;
+  font-weight: 200;
+  color: #666;
+  margin-top: -100px; /* Moves the "BENEFITS" header slightly upward */
+}
+
+.comparison-table td {
+  font-size: 16px;
+  color: #333;
+}
+
+.checkmark {
+  color: #28a745; /* Green color for checkmarks */
+  font-size: 20px;
+}
+
+.cross {
+  color: #dc3545; /* Red color for crosses */
+  font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .comparison h1 {
+    font-size: 28px;
+  }
+
+  .product-images-4 {
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Space between products */
+    justify-content: center;
+  }
+
+  .product-4 {
+    flex: 1 1 40%; /* Two products per row */
+  }
+
+  .product-4:first-child {
+    display: none; /* Hide the empty div on smaller screens */
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .comparison h1 {
+    font-size: 24px;
+  }
+
+  .product-4 {
+    flex: 1 1 100%; /* One product per row */
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .checkmark,
+  .cross {
+    font-size: 16px;
+  }
+}
+
+/* Try It Risk-Free Button */
+.try-it {
+  background: #D4A017; /* Gold background color */
+  color: #000; /* Black text color */
+  font-size: 16px;
+  font-weight: 200;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px; /* Rounded corners */
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* Space between text and arrow */
+  margin-top: 60px;
+  margin-left: 40%;
+}
+
+.try-it:hover {
+  background: #c1972e; /* Slightly darker gold on hover */
+}
+/* Founders Section */
+/* Founders Section */
+.founders-6 {
+  padding: 50px 0; /* Vertical padding for spacing */
+  margin: 40px 0; /* Margin to separate from other sections */
+}
+
+.founders-6 .container-6 {
+  max-width: 1900px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.founders-content-6 {
+  text-align: center; /* Center the content */
+}
+
+/* Image with Play Button */
+.founders-image-6 {
+  position: relative;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.founders-image-6 img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Rounded corners for the image */
+}
+
+.play-button-6 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.8);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.play-button-6 span {
+  font-size: 24px;
+  color: #d4a93a; /* Gold color for the play icon */
+}
+
+/* Text and Button */
+.founders-text-6 {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the elements */
+  gap: 20px; /* Space between heading, button, and paragraph */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  width: 100%;
+}
+
+.founders-text-6 h2 {
+  font-size: 38px;
+  font-weight: 200;
+  color: #333;
+  margin: 0; /* Remove default margin */
+  margin-right: 400px;
+}
+.arrow {
+  margin-left: 44px; /* Adjust the space as needed */
+}
+
+.founders-text-6 p {
+  font-size: 20px;
+  color: #100505;
+  margin-top: 200px;
+  text-align: left;
+  margin: 0;
+  max-width: 600px; /* Limit the width of the paragraph for readability */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the elements */
+   gap: 20px; 
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-top: 40px;
+}
+
+.btn-about {
+  background: #d4a93a; /* Gold background for the button */
+  color: #150505;
+margin-top: 10px;
+margin-right: 1150px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px; /* Rounded button */
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* Space between text and arrow */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.btn-about:hover {
+  background: #c1972e; /* Slightly darker gold on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .founders-text-6 {
+    flex-direction: column;
+    gap: 15px; /* Adjust gap for vertical layout */
+  }
+
+  .founders-text-6 h2 {
+    font-size: 24px;
+  }
+
+  .founders-text-6 p {
+    font-size: 14px;
+  }
+
+  .btn-about {
+    font-size: 14px;
+    padding: 12px 25px;
+  }
+
+  .play-button-6 {
+    width: 50px;
+    height: 50px;
+  }
+
+  .play-button-6 span {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .founders-text-6 h2 {
+    font-size: 20px;
+  }
+
+  .founders-text-6 p {
+    font-size: 12px;
+  }
+
+  .btn-about {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+
+  .play-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .play-button span {
+    font-size: 16px;
+  }
+}
+
+/* Reviews Section */
+.reviews {
+  padding: 50px 0; /* Vertical padding for spacing */
+  margin: 40px 0; /* Margin to separate from other sections */
+  background: #f8f7f5;
+}
+
+.reviews .container-7 {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 5%;
+  min-height: 600px;
+}
+
+/* Header with Heading, Subheading, and Arrows */
+.reviews-header {
+  display: flex;
+  justify-content: space-between; /* Space between text and arrows */
+  align-items: center; /* Vertically center the content */
+  margin-bottom: 40px;
+}
+
+.header-text {
+  flex: 1; /* Take up remaining space */
+}
+
+.reviews h2 {
+  font-size: 36px;
+  font-weight: 200;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.reviews .subheading {
+  font-size: 18px;
+  color: #000;
+  margin: 0; /* Remove default margin to align with heading */
+}
+
+/* Arrows */
+.arrows {
+  display: flex;
+  gap: 0px; /* Space between arrows */
+}
+
+.arrow {
+  background: #090000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background 0.3s ease;
+}
+
+.arrow:hover {
+  background: #555;
+}
+
+/* Remove absolute positioning for arrows */
+.left-arrow,
+.right-arrow {
+  position: static; /* Remove absolute positioning */
+}
+
+.left-arrow{
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+/* Carousel */
+.reviews-carousel {
+  position: relative;
+}
+
+.reviews-content {
+  margin-left: 100px;
+  display: flex;
+  gap: 20px; /* Space between review cards */
+  overflow-x: auto; /* Enable horizontal scrolling for the carousel */
+  scroll-snap-type: x mandatory; /* Snap to each card */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+}
+
+.review-card {
+
+  margin-top: 50px;
+  background: #fff;
+  border-radius: 10px; /* Rounded corners */
+  padding: 50px;
+  flex: 0 0 30%; /* Each card takes up 30% of the container width */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  scroll-snap-align: start; /* Snap alignment for each card */
+}
+
+.stars {
+  margin-bottom: 15px;
+}
+
+.stars span {
+  color: #28a745; /* Green color for stars */
+  font-size: 18px;
+}
+
+.review-card p {
+  font-size: 16px;
+  color: #040101;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #ddd; /* Placeholder for avatar */
+  border-radius: 50%;
+}
+
+.reviewer-info .name {
+  font-size: 16px;
+  font-weight: 300;
+  color: #333;
+  margin: 0;
+}
+
+.reviewer-info .position {
+  font-size: 15px;
+  color: #090000;
+  margin: 0;
+}
+
+/* Pagination Dots */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reviews-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .arrows {
+    align-self: flex-end;
+  }
+
+  .reviews h2 {
+    font-size: 28px;
+  }
+
+  .reviews .subheading {
+    font-size: 16px;
+  }
+
+  .review-card {
+    flex: 0 0 50%; /* Show fewer cards on smaller screens */
+  }
+
+  .arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews h2 {
+    font-size: 24px;
+  }
+
+  .reviews .subheading {
+    font-size: 14px;
+  }
+
+  .review-card {
+    flex: 0 0 80%; /* Show one card at a time on very small screens */
+  }
+
+  .review-card p {
+    font-size: 14px;
+  }
+
+  .reviewer-info .name {
+    font-size: 12px;
+  }
+
+  .reviewer-info .position {
+    font-size: 10px;
+  }
+
+  .arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* FAQ Section */
+.faq {
+  padding: 50px 0; /* Vertical padding for spacing */
+  margin: 40px 0; /* Margin to separate from other sections */
+}
+
+.faq .container-8 {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.faq h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.faq .subheading {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+  max-width: 600px; /* Limit the width for readability */
+}
+
+.btn-get-in-touch {
+  background: #d4a93a; /* Gold background for the button */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px; /* Rounded button */
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* Space between text and arrow */
+  margin-bottom: 40px;
+}
+
+.btn-get-in-touch:hover {
+  background: #c1972e; /* Slightly darker gold on hover */
+}
+
+/* FAQ List */
+/* FAQ Section */
+.faq {
+  padding: 50px 0; /* Vertical padding for spacing */
+  margin: 40px 0; /* Margin to separate from other sections */
+}
+
+.faq .container-8 {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: flex; /* Use Flexbox to create two columns */
+  justify-content: space-between; /* Space the two halves evenly */
+  gap: 20px; /* Space between the two halves */
+}
+
+/* Left Half */
+.faq-left {
+  margin-left: 10px;
+  flex: 1; /* Take up 50% of the container width */
+  max-width: 50%; /* Ensure it doesn’t exceed 50% */
+}
+
+/* Right Half */
+.faq-right {
+  margin-left: 10px;
+
+  flex: 1; /* Take up 50% of the container width */
+  max-width: 50%; /* Ensure it doesn’t exceed 50% */
+}
+
+.faq h2 {
+  font-size: 36px;
+  font-weight: 200;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.faq .subheading {
+  font-size: 23px;
+  color: #0d0404;
+  margin-bottom: 20px;
+  font-weight: 200;
+  max-width: 100%; /* Adjust to fit the left half */
+  line-height: 1.8;
+  
+}
+
+.btn-get-in-touch {
+  background: #d4a93a; /* Gold background for the button */
+  color: #0a0101;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px; /* Rounded button */
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* Space between text and arrow */
+  margin-bottom: 40px;
+}
+
+.btn-get-in-touch:hover {
+  background: #c1972e; /* Slightly darker gold on hover */
+}
+
+/* FAQ List */
+.faq-list {
+  max-width: 100%; /* Adjust to fit the right half */
+}
+
+.faq-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #0e0202; /* Border between items */
+}
+
+.faq-item p {
+  font-size: 22px;
+  font-weight: 200  ;
+  color: #333;
+  margin: 0;
+  padding-top: 50px;
+}
+
+.faq-item .toggle {
+  font-size: 35px;
+  color: #333;
+  cursor: pointer;
+  font-weight: 200;
+  position: relative;
+  right: 25px;
+  top:  30px;
+}
+
+/* See All Link */
+.see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.see-all:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faq .container-8 {
+    flex-direction: column; /* Stack the halves vertically */
+    gap: 40px; /* Space between the stacked sections */
+  }
+
+  .faq-left,
+  .faq-right {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+
+  .faq h2 {
+    font-size: 28px;
+  }
+
+  .faq .subheading {
+    font-size: 16px;
+  }
+
+  .btn-get-in-touch {
+    font-size: 14px;
+    padding: 12px 25px;
+  }
+
+  .faq-item p {
+    font-size: 14px;
+  }
+
+  .faq-item .toggle {
+    font-size: 20px;
+  }
+
+  .see-all {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq h2 {
+    font-size: 24px;
+  }
+
+  .faq .subheading {
+    font-size: 14px;
+  }
+
+  .btn-get-in-touch {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+
+  .faq-item p {
+    font-size: 12px;
+  }
+
+  .faq-item .toggle {
+    font-size: 18px;
+  }
+
+  .see-all {
+    font-size: 12px;
+  }
+}
+/* Newsletter Section */
+.newsletter-9 {
+  position: relative;
+  background: url('images/coffee.jpg') no-repeat center center; /* Background image */
+  background-size: contain; /* Ensure the full image is visible without cropping */
+  padding: 100px 0; /* Vertical padding for spacing */
+  margin: 40px 0; /* Margin to separate from other sections */
+  border-radius: 300px; /* Increased border radius for more rounded corners */
+  min-height: 300px; /* Reduced height slightly from 400px to 350px */
+  aspect-ratio: 12 /7; /* Maintain aspect ratio */
+}
+
+
+
+.newsletter-9 .container-9 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  text-align: center;
+  color: #fff; /* White text for contrast against the overlay */
+}
+
+.newsletter-9 h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.newsletter-9 .subheading {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between input and button */
+  max-width: 500px; /* Limit the form width */
+  margin: 0 auto;
+}
+
+.subscribe-form input {
+  padding: 15px;
+  font-size: 16px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background: transparent;
+  color: #fff;
+  width: 100%;
+  max-width: 300px; /* Limit input width */
+}
+
+.subscribe-form input::placeholder {
+  color: #ccc; /* Placeholder text color */
+}
+
+.btn-subscribe {
+  background: #fff;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px; /* Rounded button */
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px; /* Space between text and arrow */
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay for readability */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  aspect-ratio: 12 /7; /* Maintain aspect ratio */
+
+}
+.btn-subscribe:hover {
+  background: #f0f0f0;
+  color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .newsletter-9 {
+    min-height: 350px; /* Adjust height for smaller screens */
+    background-size: contain; /* Ensure the full image is visible */
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+  }
+
+  .newsletter-9 h2 {
+    font-size: 28px;
+  }
+
+  .newsletter-9 .subheading {
+    font-size: 16px;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .subscribe-form input {
+    max-width: 100%;
+  }
+
+  .btn-subscribe {
+    font-size: 14px;
+    padding: 12px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter-9 {
+    min-height: 300px; /* Further adjust height for very small screens */
+    background-size: contain; /* Ensure the full image is visible */
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+  }
+
+  .newsletter-9 h2 {
+    font-size: 24px;
+  }
+
+  .newsletter-9 .subheading {
+    font-size: 14px;
+  }
+
+  .subscribe-form input {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .btn-subscribe {
+    font-size: 12px;
+    padding: 10px 20px;
+  }
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2B2525;
+
+  padding: 40px 80px;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  flex: 1;
+}
+@font-face {
+  font-family: 'New Rail Alphabet Light Regular';
+  src: url('https://your-font-url/NewRailAlphabet-LightRegular.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+.footer-left h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 200;
+  color: #efeded;
+  letter-spacing: 10PX;
+  font-family: 'New Rail Alphabet Light Regular', serif;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 80px;
+  margin-top: 30px;
+}
+
+.footer-links div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.footer-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.newsletter {
+  margin-top: 20px;
+}
+
+.newsletter h3 {
+  color: #D9A14E;
+  margin-bottom: 20px;
+}
+
+.newsletter input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid white;
+  background: transparent;
+  color: white;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background-color: white;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #D9A14E;
+}
+
+.social-icons {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.copyright {
+  margin-top: 50px;
+  color: #D9A14E;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .footer {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+  }
+
+  .footer-right {
+      align-items: flex-start;
+      margin-top: 40px;
+  }
+
+  .newsletter input {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}
